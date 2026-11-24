@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: walad-bint
+    runtime: python
+    plan: free
+    rootDir: walad-bint
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server.py
+    healthCheckPath: /health
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
